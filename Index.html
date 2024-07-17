@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault of Codes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-half">
+                <img src="internship.jpeg" alt="Header Image" class="header-image">
+                <h1>Vault of Codes</h1>
+                <button id="showInternshipsBtn">Internships</button>
+            </div>
+        </header>
+        <div id="internships" class="internship-container">
+            <div class="box">
+                <h3>Web Development Intern</h3>
+                <button class="detailsBtn" data-target="details1">View Details</button>
+                <div id="details1" class="details">
+                    <p>Company: Tech Solutions</p>
+                    <p>Duration: 6 months</p>
+                    <p>Location: Remote</p>
+                </div>
+            </div>
+            <div class="box">
+                <h3>App Development Intern</h3>
+                <button class="detailsBtn" data-target="details2">View Details</button>
+                <div id="details2" class="details">
+                    <p>Company: Data Insights</p>
+                    <p>Duration: 2 months</p>
+                    <p>Location: Virtual</p>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Python Intern</h3>
+                <button class="detailsBtn" data-target="details3">View Details</button>
+                <div id="details3" class="details">
+                    <p>Company: VaultOfCodes</p>
+                    <p>Duration: 3 months</p>
+                    <p>Location: Virtual</p>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Graphic Design Intern</h3>
+                <button class="detailsBtn" data-target="details4">View Details</button>
+                <div id="details4" class="details">
+                    <p>Company: Creative Minds</p>
+                    <p>Duration: 2 months</p>
+                    <p>Location: Virtual</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('showInternshipsBtn').addEventListener('click', function() {
+            document.getElementById('internships').style.display = 'block';
+        });
+
+        document.querySelectorAll('.detailsBtn').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                if (target.style.display === 'none' || target.style.display === '') {
+                    target.style.display = 'block';
+                } else {
+                    target.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
